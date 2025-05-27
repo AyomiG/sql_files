@@ -3,7 +3,7 @@ This project analyzes Olympic athlete data using SQL to answer key questions abo
 
 📁 Data Source :
 https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download
-Dataset: athlete_events.csv
+ Dataset: athlete_events.csv
 
 Imported into SQLite table athlete_events.
 
@@ -37,3 +37,5 @@ Real-world data analysis
 SQLite
 
 SQL IDE (DB Browser for SQLite, DBeaver, VS Code SQL extension)
+
+
