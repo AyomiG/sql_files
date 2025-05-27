@@ -1,5 +1,5 @@
 Olympics SQL Data Exploration – Portfolio Project
-This project analyzes Olympic athlete data using SQL to answer key questions about Games, countries, sports, and athletes.
+This project analyzes Olympic athlete data using SQL to answer key questions about the Games, countries, sports, and athletes.
 
 📁 Data Source :
 https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download
