@@ -102,5 +102,5 @@ CSV-to-SQL data import
 Markdown documentation via GitHub
 
 📂 Query Scripts
-All SQL queries used in this project are saved in sales_queries.sql in this repository.
+All SQL queries used in this project are saved in Sales_record_1 in this repository.
 
