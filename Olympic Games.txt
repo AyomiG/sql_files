@@ -1,0 +1,19 @@
+-- Number of unique Olympic Games
+SELECT COUNT(DISTINCT games) FROM athlete_events;
+
+-- Countries participating per Olympic Games
+SELECT games, COUNT(DISTINCT NOC) FROM athlete_events GROUP BY games;
+
+-- Country participating in all Olympic Games
+WITH total_games AS (
+  SELECT COUNT(DISTINCT games) AS count_games FROM athlete_events
+)
+SELECT NOC FROM athlete_events
+GROUP BY NOC
+HAVING COUNT(DISTINCT games) = (SELECT count_games FROM total_games);
+
+-- Oldest athlete to win Gold
+SELECT * FROM athlete_events
+WHERE age = (
+    SELECT MAX(age) FROM athlete_events WHERE age IS NOT NULL
+) AND Medal = 'Gold';
