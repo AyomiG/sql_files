@@ -38,22 +38,6 @@ SQL IDE (DB Browser for SQLite, DBeaver, VS Code SQL extension)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 **📊 Sales Data Exploration with SQL – Portfolio Project**
 This project demonstrates how to explore and analyze a mock sales dataset using core SQL skills. The queries cover a range of business questions, from revenue tracking to product performance, offering a well-rounded showcase of SQL proficiency.
 
@@ -103,4 +87,31 @@ Markdown documentation via GitHub
 
 📂 Query Scripts
 All SQL queries used in this project are saved in [Sales_record_1](https://github.com/AyomiG/sql_files/commit/87c7062784e5dfcaaefff60f41c448a0090a922c) in this repository.
+
+
+
+
+**# Sales Data SQL Analysis Portfolio**
+
+## Overview
+This repository contains SQL scripts and queries to analyze a simple sales dataset, covering sales trends, customer behavior, and product performance.
+
+## Dataset
+The dataset consists of a single table `Sales` with fields:  
+- OrderID  
+- ProductName  
+- Customer  
+- OrderDate  
+- Quantity  
+- UnitPrice  
+
+The dataset is synthetic and contains 10 rows.
+
+## Setup
+Run the SQL script `setup_sales.sql` in your SQL environment to create and populate the `Sales` table.
+
+## Queries
+All example queries are in `queries.sql`. Some key examples:  
+
+
 
