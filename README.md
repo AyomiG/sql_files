@@ -111,7 +111,6 @@ The dataset is synthetic and contains 10 rows.
 Run the SQL script `setup_sales.sql` in your SQL environment to create and populate the `Sales` table.
 
 ## Queries
-All example queries are in `queries.sql`. Some key examples:  
-
+All example queries are in (https://github.com/AyomiG/sql_files/commit/fa723851d246373112dd7c3c116ca8d695a4bf1e).
 
 
