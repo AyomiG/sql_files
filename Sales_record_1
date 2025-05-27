@@ -1,1 +1,133 @@
+-- View all sales
+SELECT * FROM sales;
+
+-- View product names and unit prices
+SELECT product_name, unit_price FROM products;
+
+-- View sale IDs and dates
+SELECT sale_id, sale_date FROM sales;
+
+-- Sales with total price greater than 100
+SELECT * FROM sales
+WHERE total_price > 100;
+
+-- Products in the 'Electronics' category
+SELECT * FROM products
+WHERE category = 'Electronics';
+
+-- Sales on 2024-01-03 with total price and ID
+SELECT sale_id, total_price, sale_date FROM sales
+WHERE sale_date = '2024-01-03';
+
+-- Products with unit price greater than 100
+SELECT product_id, product_name FROM products
+WHERE unit_price > 100.00;
+
+-- Total revenue from all sales
+SELECT SUM(total_price) FROM sales;
+
+-- Average product price
+SELECT AVG(unit_price) FROM products;
+
+-- Total quantity sold
+SELECT SUM(quantity_sold) FROM sales;
+
+-- Number of sales per day
+SELECT COUNT(quantity_sold), sale_date FROM sales
+GROUP BY sale_date;
+
+-- Product with the highest unit price
+SELECT product_name, unit_price FROM products
+WHERE unit_price = (SELECT MAX(unit_price) FROM products);
+
+-- Sales with quantity sold greater than 4
+SELECT sale_id, product_id, total_price FROM sales
+WHERE quantity_sold > 4;
+
+-- Products ordered by descending price
+SELECT product_name, unit_price FROM products
+ORDER BY unit_price DESC;
+
+-- Average total sale price
+SELECT AVG(total_price) FROM sales;
+
+-- Total revenue from electronics
+SELECT SUM(sales.total_price) AS total_revenue 
+FROM sales 
+JOIN products ON sales.product_id = products.product_id 
+WHERE products.category = 'Electronics';
+
+-- Products priced between 20 and 600
+SELECT product_name, unit_price FROM products
+WHERE unit_price BETWEEN 20 AND 600;
+
+-- Products sorted by category
+SELECT product_name, unit_price, category FROM products
+ORDER BY category ASC;
+
+-- Total quantity sold in electronics category
+SELECT SUM(sales.quantity_sold) FROM sales
+JOIN products ON sales.product_id = products.product_id
+WHERE products.category = 'Electronics';
+
+-- Total price per product
+SELECT product_name, (unit_price * quantity_sold) AS total_price 
+FROM sales
+JOIN products ON sales.product_id = products.product_id;
+
+-- Total sales by category
+SELECT SUM(total_price), category FROM sales
+JOIN products ON sales.product_id = products.product_id
+GROUP BY category;
+
+-- Average unit price by category
+SELECT AVG(unit_price), category FROM products
+GROUP BY category;
+
+-- Total sales per product (only if greater than 30)
+SELECT product_name, SUM(quantity_sold * unit_price) AS total_sales
+FROM sales
+JOIN products ON sales.product_id = products.product_id
+GROUP BY products.product_name
+HAVING SUM(quantity_sold * unit_price) > 30;
+
+-- Products containing 'Smart' in name
+SELECT * FROM sales
+JOIN products ON sales.product_id = products.product_id
+WHERE products.product_name LIKE '%Smart%';
+
+-- Average quantity sold for products over 100 unit price
+SELECT AVG(quantity_sold), product_name, unit_price FROM products
+JOIN sales ON products.product_id = sales.product_id
+WHERE unit_price > 100;
+
+-- Total sales per product
+SELECT product_name, (quantity_sold * unit_price) AS tot_sales 
+FROM products
+JOIN sales ON products.product_id = sales.product_id
+GROUP BY product_name;
+
+-- Sale ID with product names
+SELECT sale_id, product_name FROM sales
+JOIN products ON products.product_id = sales.product_id;
+
+-- Rank products by total sales
+SELECT product_name, SUM(quantity_sold * unit_price) AS tot_sales,
+       RANK() OVER (ORDER BY SUM(quantity_sold * unit_price) DESC) AS rank_
+FROM products
+JOIN sales ON products.product_id = sales.product_id
+GROUP BY product_name;
+
+-- Categorize sales by total_price
+SELECT sale_id, 
+       CASE 
+           WHEN total_price > 200 THEN 'High'
+           WHEN total_price BETWEEN 100 AND 200 THEN 'Medium'
+           ELSE 'Low'
+       END AS sales_category
+FROM sales;
+
+-- Sales above average quantity sold
+SELECT sale_id, quantity_sold FROM sales
+WHERE quantity_sold > (SELECT AVG(quantity_sold) FROM sales);
 
