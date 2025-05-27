@@ -39,4 +39,4 @@ SQLite
 SQL IDE (DB Browser for SQLite, DBeaver, VS Code SQL extension)
 
 
-📄 [View Full SQL Queries](olympics_games.txt)
+📄 [View Full SQL Queries](https://github.com/AyomiG/sql_files/blob/main/Olympic%20Games.txt)
