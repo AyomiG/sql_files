@@ -5,7 +5,7 @@ This project analyzes Olympic athlete data using SQL to answer key questions abo
 https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download
  Dataset: athlete_events.csv
 
-Imported into SQLite table athlete_events.
+Imported into the SQLite table athlete_events.
 
 📌 Key Questions Explored
 How many unique Olympic Games have been held?
